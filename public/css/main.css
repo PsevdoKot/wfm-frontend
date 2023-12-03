@@ -58,6 +58,14 @@ img {
   height: 100%;
 }
 
+.container--opened-menu {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #00000069;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -69,18 +77,15 @@ img {
 /* sidebar */
 .sidebar {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 12px;
   height: 100%;
   width: var(--sidebar-width);
   background-color: #EF3B24;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-}
-
-.nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .nav__burger {
@@ -112,8 +117,48 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 48px;
-  height: 48px;
+}
+
+.sidebar--opened {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 12px 12px 0;
+  height: 100%;
+  background-color: #EF3B24;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.sidebar__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+.sidebar--opened .nav__burger {
+  margin-bottom: 0;
+}
+
+.sidebar__logo {
+  padding: 0 55px;
+}
+
+.sidebar--opened .nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  margin-left: 7px;
+}
+
+.nav__link-text {
+  margin-left: 12px;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  color: #fff;
 }
 
 /* header */
@@ -166,6 +211,7 @@ img {
 }
 
 .signup__input-group {
+  font-family: Inter;
   font-size: 24px;
   font-weight: 300;
   letter-spacing: 0em;
@@ -186,6 +232,7 @@ img {
 .signup__button--reverse {
   padding: 20px 52px;
   width: 100%;
+  font-family: Inter;
   font-size: 32px;
   font-weight: 400;
   letter-spacing: 0em;
@@ -202,8 +249,53 @@ img {
   border: 5px solid #000000
 }
 
-
 /* user */
+.user {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
 
+.user__info {
+  display: flex;
+  flex-direction: row;
+}
+
+.user__image {
+  margin-right: 50px;
+  border-radius: 40px;
+}
+
+.user__data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.user__fisrt-name,
+.user__last-name {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 0em;
+  width: 432px;
+  padding: 15px 20px;
+  border: 1.5px solid #000000;
+  border-radius: 8px;
+}
+
+.user__signout-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  padding: 15px 30px;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  color: #fff;
+  background-color: #000;
+  border-radius: 7px;
+}
 
 /* main */

@@ -5,7 +5,9 @@ export const AuthStatus = {
 } as const;
 
 export const APIRoute = {
+  Signup: 'signup',
   Login: 'login',
+  Logout: 'logout',
 } as const;
 
 export const NameSpace = {

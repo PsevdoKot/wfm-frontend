@@ -6,16 +6,16 @@ import { UserData } from '../../types/user-data';
 
 type UserProcessState = {
   authStatus: AuthStatus;
-  name: string | undefined;
+  firstName: string | undefined;
+  lastName: string | undefined;
   avatarUrl: string | undefined;
-  email: string | undefined;
 };
 
 const initialState: UserProcessState = {
   authStatus: 'Unknown',
-  name: undefined,
+  firstName: undefined,
+  lastName: undefined,
   avatarUrl: undefined,
-  email: undefined,
 };
 
 export const userProcess = createSlice({
@@ -23,14 +23,14 @@ export const userProcess = createSlice({
   initialState,
   reducers: {
     setUserData: (state, action: PayloadAction<Omit<UserData, 'token'>>) => {
-      state.name = action.payload.name;
+      state.firstName = action.payload.firstName;
+      state.lastName = action.payload.lastName;
       state.avatarUrl = action.payload.avatarUrl;
-      state.email = action.payload.email;
     },
     clearUserData: (state) => {
-      state.name = undefined;
+      state.firstName = undefined;
+      state.lastName = undefined;
       state.avatarUrl = undefined;
-      state.email = undefined;
     },
   },
   extraReducers(builder) {

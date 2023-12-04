@@ -1,6 +1,18 @@
 import Layout from '../../components/layout';
+import { AuthStatus } from '../../consts';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { logoutAction } from '../../store/api-actions';
+import { getAuthStatus } from '../../store/user-process/selectors';
 
 export default function UserScreen(): JSX.Element {
+  const dispatch = useAppDispatch();
+
+  const authStatus = useAppSelector(getAuthStatus);
+
+  const hanldeLogoutButtonClick = () => {
+    dispatch(logoutAction());
+  };
+
   return (
     <Layout>
       <article className="user">
@@ -16,7 +28,8 @@ export default function UserScreen(): JSX.Element {
             <div className="user__last-name">Фамилия</div>
           </div>
         </div>
-        <button className="user__signout-btn btn-reset">Выйти</button>
+        {authStatus === AuthStatus.Auth ??
+        <button onClick={hanldeLogoutButtonClick} className="user__signout-btn btn-reset">Выйти</button>}
       </article>
     </Layout>
   );

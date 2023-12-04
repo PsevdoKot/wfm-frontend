@@ -28,8 +28,8 @@ export const signupAction = createAsyncThunk<void, RegistrationData, {
   extra: AxiosInstance;
 }>(
   'user/login',
-  async ({ name, tel, login, password }, { dispatch, extra: api }) => {
-    await api.post<UserData>(APIRoute.Signup, { name, tel, login, password });
+  async ({ firstName, lastName, login, password }, { dispatch, extra: api }) => {
+    await api.post<UserData>(APIRoute.Signup, { firstName, lastName, login, password });
 
     dispatch(redirectToRoute(AppRoutes.Login.FullPath));
   },

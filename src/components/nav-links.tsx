@@ -15,7 +15,7 @@ export default function NavLinks({ navOpened }: NavLinksProps): JSX.Element {
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                 <use xlinkHref={`#${navLink.Svg}`}></use>
               </svg>
-              {navOpened ??
+              {navOpened &&
                 <span className="nav__link-text">{ navLink.Title }</span>}
             </Link>
           </li>

@@ -1,34 +1,28 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useState } from 'react';
 import { AppRoutes } from '../app-routes';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../hooks';
 import { getAuthStatus } from '../store/user-process/selectors';
 import { AuthStatus } from '../consts';
+import OpenedNav from './opened-nav';
+import NavBurger from './nav-burger';
+import NavLinks from './nav-links';
 
 type LayoutProps = PropsWithChildren;
 
 export default function Layout({ children }: LayoutProps): JSX.Element {
+  const [isNavOpened, setNavOpened] = useState(false);
+  const handleBurgerClick = () => setNavOpened((prev) => !prev);
+
   const authStatus = useAppSelector(getAuthStatus);
 
   return(
     <div className="container">
+      {isNavOpened &&
+        <OpenedNav onBurgerClick={handleBurgerClick} />}
       <aside className="sidebar">
-        <button className="nav__burger btn-reset">
-          <span className="nav__burger-line"></span>
-          <span className="nav__burger-line"></span>
-          <span className="nav__burger-line"></span>
-        </button>
-        <nav className="sidebar__nav nav">
-          <ul className="nav__list list-reset">
-            <li className="nav__item">
-              <Link to={AppRoutes.Main.FullPath} className="nav__link">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <use xlinkHref="#wfm"></use>
-                </svg>
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <NavBurger onBurgerClick={handleBurgerClick} />
+        <NavLinks navOpened={false} />
       </aside>
       <main className="main-container">
         <header className="header">

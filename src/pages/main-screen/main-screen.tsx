@@ -1,7 +1,5 @@
 import Layout from '../../components/layout';
 
-// export type MainScreenProps = {};
-
 export default function MainScreen(): JSX.Element {
   return (
     <Layout>
@@ -16,7 +14,7 @@ export default function MainScreen(): JSX.Element {
           <div className="table-controls__date">
             <button className="table-controls__date-left-btn btn-reset">&lt;</button>
             <button className="table-controls__calendar-btn btn-reset">
-              <svg width="18" height="15" viewBox="0 0 18 15" fill="none">
+              <svg className='table-controls__calendar-svg' width="18" height="15" viewBox="0 0 18 15" fill="none">
                 <use xlinkHref="#calendar"></use>
               </svg>
             </button>

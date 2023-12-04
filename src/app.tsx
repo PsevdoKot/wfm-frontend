@@ -9,9 +9,7 @@ import browserHistory from './browser-history';
 import SignUpScreen from './pages/signup-screen/signup-screen';
 import UserScreen from './pages/user-screen/user-screen';
 
-export type AppProps = {};
-
-export default function App(props: AppProps): JSX.Element {
+export default function App(): JSX.Element {
   return (
     <HistoryRouter history={browserHistory}>
       <Routes>

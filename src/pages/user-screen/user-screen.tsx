@@ -1,7 +1,5 @@
 import Layout from '../../components/layout';
 
-// export type UserScreenProps = {};
-
 export default function UserScreen(): JSX.Element {
   return (
     <Layout>

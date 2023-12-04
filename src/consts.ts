@@ -1,8 +1,19 @@
+import { AppRoutes } from './app-routes';
+import { NavLink } from './types/nav-link';
+
 export const AuthStatus = {
   Auth: 'Auth',
   NoAuth: 'NoAuth',
   Unknown: 'Unknown',
 } as const;
+
+export const NavLinksData: ReadonlyArray<NavLink> = [
+  {
+    Svg: 'wfm',
+    Title: 'WFM',
+    Href: AppRoutes.Main.FullPath,
+  },
+];
 
 export const APIRoute = {
   Signup: 'signup',

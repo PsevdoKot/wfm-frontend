@@ -361,10 +361,15 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: end;
+  margin: 3px 0;
   padding: 7px;
   width: 209px;
   border: 1px solid #000;
   border-radius: 4px;
+}
+
+.table-controls__calendar-svg {
+  margin-top: -2px;
 }
 
 .table-controls__right {
@@ -376,7 +381,7 @@ img {
 
 .table-controls__filter,
 .table-controls__selector {
-  padding: 6px 23px;
+  padding: 3px 23px 6px;
   height: 35px;
   font-family: Inter;
   font-size: 20px;

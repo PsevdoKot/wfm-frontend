@@ -1,11 +1,14 @@
 import Layout from '../../components/layout';
-import { ChangeEventHandler, FormEventHandler, useState } from 'react';
+import { ChangeEventHandler, FormEventHandler, MouseEventHandler, useState } from 'react';
 import { useAppDispatch } from '../../hooks';
 import { loginAction } from '../../store/api-actions';
+import { useNavigate } from 'react-router-dom';
+import { AppRoutes } from '../../app-routes';
 
 // export type LoginScreenProps = {};
 
 export default function LoginScreen(): JSX.Element {
+  const navigate = useNavigate();
   const dispath = useAppDispatch();
 
   const [formData, setFormData] = useState({ login: '', password: '' });
@@ -20,6 +23,11 @@ export default function LoginScreen(): JSX.Element {
     if (formData.login.length && formData.password.length) {
       dispath(loginAction(formData));
     }
+  };
+
+  const handleSignupButtonClick: MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.preventDefault();
+    navigate(AppRoutes.SignUp.FullPath);
   };
 
   return (
@@ -52,7 +60,7 @@ export default function LoginScreen(): JSX.Element {
             />
           </div>
           <button className="signup__button btn-reset" type="submit">Войти</button>
-          <button className="signup__button--reverse btn-reset" type="submit">Зарегистрироваться</button>
+          <button onClick={handleSignupButtonClick} className="signup__button--reverse btn-reset">Зарегистрироваться</button>
         </form>
       </article>
     </Layout>

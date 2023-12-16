@@ -4,7 +4,7 @@ import { useAppDispatch } from '../../hooks';
 import { signupAction } from '../../store/api-actions';
 import useValidationInput from '../../hooks/use-validation-input';
 import checkNameValidity from '../../shared/check-first-name-validity';
-import checkLoginValidity from '../../shared/check-email-validity';
+import checkLoginValidity from '../../shared/check-login-validity';
 import checkPasswordValidity from '../../shared/check-password-validity';
 
 export default function SignUpScreen(): JSX.Element {

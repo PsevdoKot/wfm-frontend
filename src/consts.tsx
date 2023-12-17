@@ -1,4 +1,5 @@
 import { AppRoutes } from './app-routes';
+import WFMSVG from './components/svg/wfm-svg';
 import { NavLink } from './types/nav-link';
 
 export const AuthStatus = {
@@ -9,7 +10,7 @@ export const AuthStatus = {
 
 export const NavLinksData: ReadonlyArray<NavLink> = [
   {
-    Svg: 'wfm',
+    Svg: <WFMSVG />,
     Title: 'WFM',
     Href: AppRoutes.Main.FullPath,
   },

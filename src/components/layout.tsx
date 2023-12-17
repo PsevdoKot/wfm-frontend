@@ -7,6 +7,8 @@ import { AuthStatus } from '../consts';
 import OpenedNav from './opened-nav';
 import NavBurger from './nav-burger';
 import NavLinks from './nav-links';
+import LogoSVG from './svg/logo-svg';
+import UserSVG from './svg/user-svg';
 
 type LayoutProps = PropsWithChildren;
 
@@ -27,16 +29,12 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       <main className="main-container">
         <header className="header">
           <div className="header__logo">
-            <svg width="221" height="16" viewBox="0 0 221 16" fill="none">
-              <use xlinkHref="#logo"></use>
-            </svg>
+            <LogoSVG />
           </div>
           {authStatus === AuthStatus.Auth
             ?
             <Link to={AppRoutes.User.FullPath} className="header__user-link">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <use xlinkHref="#user"></use>
-              </svg>
+              <UserSVG />
             </Link>
             : <div className='header__user-link' />}
         </header>

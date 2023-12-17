@@ -1,22 +1,21 @@
 import Layout from '../../components/layout';
+import CalendarSVG from '../../components/svg/calendar-svg';
+import SettingsSVG from '../../components/svg/settings-svg';
+import WFMSVG from '../../components/svg/wfm-svg';
 
 export default function MainScreen(): JSX.Element {
   return (
     <Layout>
       <article className="main">
         <div className="main__title">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <use xlinkHref="#wfm-black"></use>
-          </svg>
+          <WFMSVG stroke='black' />
           <h1 className="main__title-text title-reset">WFM</h1>
         </div>
         <div className="main__table-controls table-controls">
           <div className="table-controls__date">
             <button className="table-controls__date-left-btn btn-reset">&lt;</button>
             <button className="table-controls__calendar-btn btn-reset">
-              <svg className='table-controls__calendar-svg' width="18" height="15" viewBox="0 0 18 15" fill="none">
-                <use xlinkHref="#calendar"></use>
-              </svg>
+              <CalendarSVG />
             </button>
             <button className="table-controls__date-right-btn btn-reset">&gt;</button>
           </div>
@@ -28,9 +27,7 @@ export default function MainScreen(): JSX.Element {
               <option>Опция 3</option>
             </select>
             <button className="table-controls__settings btn-reset">
-              <svg width="35" height="35" viewBox="0 0 35 35" fill="none">
-                <use xlinkHref="#settings"></use>
-              </svg>
+              <SettingsSVG />
             </button>
           </div>
         </div>

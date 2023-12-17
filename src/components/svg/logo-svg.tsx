@@ -4,7 +4,7 @@ export type LogoSVGProps = {
 
 export default function LogoSVG({ fill = 'white' }: LogoSVGProps): JSX.Element {
   return (
-    <svg width="221" height="16" viewBox="0 0 221 16" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg width="221" height="16" viewBox="0 0 221 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 0.292725H22.9919V4.02444H4.96278V6.09761H18.5086C22.1287 6.09761 24.2865 7.87808 24.2865 10.8781C24.2865 13.8781 22.1527 15.6586 18.5086 15.6586H0V0.292725ZM4.96278 9.73175V12.0732H17.5974C18.7004 12.0732 19.2038 11.7317 19.2038 10.9025C19.2038 10.0976 18.7004 9.73175 17.5974 9.73175H4.96278Z"
         fill={fill}

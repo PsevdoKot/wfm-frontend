@@ -1,9 +1,9 @@
-import Layout from '../../components/layout';
+import Layout from '../components/layout';
 import { ChangeEventHandler, FormEventHandler, MouseEventHandler, useState } from 'react';
-import { useAppDispatch } from '../../hooks';
-import { loginAction } from '../../store/api-actions';
+import { useAppDispatch } from '../hooks';
+import { loginAction } from '../store/api-actions';
 import { useNavigate } from 'react-router-dom';
-import { AppRoutes } from '../../app-routes';
+import { AppRoutes } from '../app-routes';
 
 // export type LoginScreenProps = {};
 

@@ -1,5 +1,5 @@
 export type NavLink = {
-  Svg: JSX.Element;
+  Icon: JSX.Element;
   Title: string;
   Href: string;
 };

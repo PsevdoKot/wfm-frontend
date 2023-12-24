@@ -32,10 +32,10 @@ export default function ErrorScreen({ errorStatusCode = -1 }: ErrorScreenProps):
     <div className="error-screen__wrapper">
       <div className="error-screen__title">
         <h1>
-          { errorTitle }
-          <small>{ errorDesc }</small>
+          {errorTitle}
+          <small>{errorDesc}</small>
         </h1>
-        <Link to={AppRoutes.Main.fullPath} className="error-screen__link">Go back to the main page</Link>
+        <Link to={AppRoutes.Management.fullPath} className="error-screen__link">Go back to the main page</Link>
       </div>
     </div>
   );

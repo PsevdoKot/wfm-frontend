@@ -4,15 +4,9 @@ export type UserSVGProps = {
 
 export default function UserSVG({ stroke = 'white' }: UserSVGProps): JSX.Element {
   return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M19.9996 22.5C14.2366 22.5 9.38443 26.4 7.93853 31.7048C7.45442 33.481 8.99203 35 10.833 35H29.1663C31.0072 35 32.5449 33.481 32.0608 31.7048C30.6149 26.4 25.7627 22.5 19.9996 22.5Z"
-        stroke={stroke} strokeWidth="2" strokeLinecap="round"
-      />
-      <path
-        d="M25.8329 11.6666C25.8329 14.8883 23.2212 17.4999 19.9995 17.4999C16.7779 17.4999 14.1663 14.8883 14.1663 11.6666C14.1663 8.44492 16.7779 5.83325 19.9995 5.83325C23.2212 5.83325 25.8329 8.44492 25.8329 11.6666Z"
-        stroke={stroke} strokeWidth="2" strokeLinecap="round"
-      />
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23.9994 27C17.0838 27 11.2612 31.68 9.52614 38.0458C8.9452 40.1772 10.7903 42 12.9995 42H34.9994C37.2086 42 39.0538 40.1772 38.4728 38.0458C36.7378 31.68 30.9152 27 23.9994 27Z" stroke={stroke} strokeWidth="2" strokeLinecap="round" />
+      <path d="M30.9994 14C30.9994 17.866 27.8654 21 23.9994 21C20.1334 21 16.9995 17.866 16.9995 14C16.9995 10.134 20.1334 7 23.9994 7C27.8654 7 30.9994 10.134 30.9994 14Z" stroke={stroke} strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }

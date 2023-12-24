@@ -1,9 +1,9 @@
-import Layout from '../../components/layout';
-import UserPictureSVG from '../../components/svg/user-picture-svg';
-import { AuthStatus } from '../../consts';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { logoutAction } from '../../store/api-actions';
-import { getAuthStatus } from '../../store/user-process/selectors';
+import Layout from '../components/layout';
+import UserPictureSVG from '../components/svg/user-picture-svg';
+import { AuthStatus } from '../consts';
+import { useAppDispatch, useAppSelector } from '../hooks';
+import { logoutAction } from '../store/api-actions';
+import { getAuthStatus } from '../store/user-process/selectors';
 
 export default function UserScreen(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -27,7 +27,7 @@ export default function UserScreen(): JSX.Element {
           </div>
         </div>
         {authStatus === AuthStatus.Auth ??
-        <button onClick={hanldeLogoutButtonClick} className="user__signout-btn btn-reset">Выйти</button>}
+          <button onClick={hanldeLogoutButtonClick} className="user__signout-btn btn-reset">Выйти</button>}
       </article>
     </Layout>
   );

@@ -12,9 +12,9 @@ export default function NavLinks({ navOpened }: NavLinksProps): JSX.Element {
         {NavLinksData.map((navLink) => (
           <li key={navLink.Title} className="nav__item">
             <Link to={navLink.Href} className="nav__link" title={navLink.Title}>
-              { navLink.Svg }
-              { navOpened &&
-                <span className="nav__link-text">{ navLink.Title }</span>}
+              {navLink.Icon}
+              {navOpened &&
+                <span className="nav__link-text">{navLink.Title}</span>}
             </Link>
           </li>
         ))}

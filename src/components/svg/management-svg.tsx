@@ -1,8 +1,8 @@
-export type WFMSVGProps = {
+export type ManagementSVGProps = {
   stroke?: string;
 };
 
-export default function WFMSVG({ stroke = 'white' }: WFMSVGProps): JSX.Element {
+export default function ManagementSVG({ stroke = 'white' }: ManagementSVGProps): JSX.Element {
   return (
     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path

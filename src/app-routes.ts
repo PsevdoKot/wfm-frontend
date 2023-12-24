@@ -1,15 +1,21 @@
 export const AppRoutes = {
-  Main: {
-    FullPath: '/',
+  User: {
+    FullPath: '/user/:id',
+  },
+  Management: {
+    FullPath: '/managment',
+  },
+  Planning: {
+    FullPath: '/'
+  },
+  Calculator: {
+    FullPath: '/calculator'
   },
   Login: {
     FullPath: '/login',
   },
   SignUp: {
     FullPath: '/signup',
-  },
-  User: {
-    FullPath: '/user/:id',
   },
   Error: {
     FullPath: '*'

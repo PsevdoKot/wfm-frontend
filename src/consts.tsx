@@ -1,6 +1,10 @@
 import { AppRoutes } from './app-routes';
-import WFMSVG from './components/svg/wfm-svg';
+import CalculatorSVG from './components/svg/calculator-svg';
+import PlanningSVG from './components/svg/planning-svg';
+import UserSVG from './components/svg/user-svg';
+import ManagementSVG from './components/svg/management-svg';
 import { NavLink } from './types/nav-link';
+import { Role } from './types/role';
 
 export const AuthStatus = {
   Auth: 'Auth',
@@ -8,11 +12,38 @@ export const AuthStatus = {
   Unknown: 'Unknown',
 } as const;
 
+export const Roles = {
+  Employee: 'Employee',
+  Manager: 'Manager',
+  Leader: 'Leader',
+} as const;
+
+export const RolesRU: { [key: string]: Role } = {
+  'Сотрудник': 'Employee',
+  'Менеджер': 'Manager',
+  'Руководитель': 'Leader',
+} as const;
+
 export const NavLinksData: ReadonlyArray<NavLink> = [
   {
-    Svg: <WFMSVG />,
-    Title: 'WFM',
-    Href: AppRoutes.Main.FullPath,
+    Icon: <UserSVG />,
+    Title: 'Личный кабинет',
+    Href: AppRoutes.User.FullPath,
+  },
+  {
+    Icon: <ManagementSVG />,
+    Title: 'Система управления персоналом',
+    Href: AppRoutes.Management.FullPath,
+  },
+  {
+    Icon: <PlanningSVG />,
+    Title: 'Планирование',
+    Href: AppRoutes.Planning.FullPath,
+  },
+  {
+    Icon: <CalculatorSVG />,
+    Title: 'Калькулятор метрик',
+    Href: AppRoutes.Calculator.FullPath,
   },
 ];
 
@@ -27,7 +58,7 @@ export const NameSpace = {
   User: 'User',
 } as const;
 
-export const ErrorCodesDesc: {[key: number]: string} = {
+export const ErrorCodesDesc: { [key: number]: string } = {
   400: 'Bad Request',
   401: 'Unauthorized',
   404: 'Not Found',

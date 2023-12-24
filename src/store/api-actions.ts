@@ -17,7 +17,7 @@ export const checkAuthAction = createAsyncThunk<UserData, undefined, {
 }>(
   'user/checkAuth',
   async (_, { extra: api }) => {
-    const {data} = await api.get<UserData>(APIRoute.Login);
+    const { data } = await api.get<UserData>(APIRoute.Login);
     return data;
   },
 );
@@ -28,8 +28,8 @@ export const signupAction = createAsyncThunk<void, RegistrationData, {
   extra: AxiosInstance;
 }>(
   'user/login',
-  async ({ firstName, lastName, login, password }, { dispatch, extra: api }) => {
-    await api.post<UserData>(APIRoute.Signup, { firstName, lastName, login, password });
+  async ({ firstName, lastName, patronymic, role, login, password }, { dispatch, extra: api }) => {
+    await api.post<UserData>(APIRoute.Signup, { firstName, lastName, patronymic, role, login, password });
 
     dispatch(redirectToRoute(AppRoutes.Login.FullPath));
   },
@@ -42,12 +42,12 @@ export const loginAction = createAsyncThunk<UserData, AuthData, {
 }>(
   'user/login',
   async ({ login, password }, { dispatch, extra: api }) => {
-    const {data} = await api.post<UserData>(APIRoute.Login, { login, password });
+    const { data } = await api.post<UserData>(APIRoute.Login, { login, password });
 
     saveToken(data.token);
     dispatch(setUserData(data));
 
-    dispatch(redirectToRoute(AppRoutes.Main.FullPath));
+    dispatch(redirectToRoute(AppRoutes.Management.FullPath));
     return data;
   },
 );

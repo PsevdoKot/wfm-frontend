@@ -1,0 +1,37 @@
+import Layout from '../components/layout';
+import CalculatorSVG from '../components/svg/calculator-svg';
+import CalendarSVG from '../components/svg/calendar-svg';
+import SettingsSVG from '../components/svg/settings-svg';
+
+export default function CalculatorScreen(): JSX.Element {
+  return (
+    <Layout>
+      <article className="management">
+        <div className="management__title">
+          <CalculatorSVG stroke='black' />
+          <h1 className="management__title-text title-reset">Калькулятор метрик</h1>
+        </div>
+        <div className="management__table-controls table-controls">
+          <div className="table-controls__date">
+            <button className="table-controls__date-left-btn btn-reset">&lt;</button>
+            <button className="table-controls__calendar-btn btn-reset">
+              <CalendarSVG />
+            </button>
+            <button className="table-controls__date-right-btn btn-reset">&gt;</button>
+          </div>
+          <div className="table-controls__right">
+            <input className="table-controls__filter" name="filter" type="text" placeholder="Фильтр" id="filter" />
+            <select className="table-controls__selector">
+              <option>Опция 1</option>
+              <option>Опция 2</option>
+              <option>Опция 3</option>
+            </select>
+            <button className="table-controls__settings btn-reset">
+              <SettingsSVG />
+            </button>
+          </div>
+        </div>
+      </article>
+    </Layout>
+  );
+}

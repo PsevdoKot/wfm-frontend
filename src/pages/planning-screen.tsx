@@ -6,12 +6,12 @@ import SettingsSVG from '../components/svg/settings-svg';
 export default function PlanningScreen(): JSX.Element {
   return (
     <Layout>
-      <article className="management">
-        <div className="management__title">
+      <article className="planning main">
+        <div className="main__title">
           <PlanningSVG stroke='black' />
-          <h1 className="management__title-text title-reset">Планирование</h1>
+          <h1 className="main__title-text title-reset">Планирование</h1>
         </div>
-        <div className="management__table-controls table-controls">
+        <div className="main__table-controls table-controls">
           <div className="table-controls__date">
             <button className="table-controls__date-left-btn btn-reset">&lt;</button>
             <button className="table-controls__calendar-btn btn-reset">
@@ -31,26 +31,26 @@ export default function PlanningScreen(): JSX.Element {
             </button>
           </div>
         </div>
-        <table className="management__table">
-          <thead className="management__table-head">
-            <tr className="management__table-row">
-              <th className="management__table-head-cell">ПН</th>
-              <th className="management__table-head-cell">ВТ</th>
-              <th className="management__table-head-cell">СР</th>
-              <th className="management__table-head-cell">ЧТ</th>
-              <th className="management__table-head-cell">ПТ</th>
-              <th className="management__table-head-cell">СБ</th>
-              <th className="management__table-head-cell">ВС</th>
+        <table className="main__table">
+          <thead className="main__table-head">
+            <tr className="main__table-row">
+              <th className="main__table-head-cell">ПН</th>
+              <th className="main__table-head-cell">ВТ</th>
+              <th className="main__table-head-cell">СР</th>
+              <th className="main__table-head-cell">ЧТ</th>
+              <th className="main__table-head-cell">ПТ</th>
+              <th className="main__table-head-cell">СБ</th>
+              <th className="main__table-head-cell">ВС</th>
             </tr>
           </thead>
-          <tbody className="management__table-body">
-            <tr className="management__table-row">
-              <td className="management__table-body-cell"></td>
-              <td className="management__table-body-cell"></td>
-              <td className="management__table-body-cell"></td>
-              <td className="management__table-body-cell"></td>
-              <td className="management__table-body-cell"></td>
-              <td className="management__table-body-cell"></td>
+          <tbody className="main__table-body">
+            <tr className="main__table-row">
+              <td className="main__table-body-cell"></td>
+              <td className="main__table-body-cell"></td>
+              <td className="main__table-body-cell"></td>
+              <td className="main__table-body-cell"></td>
+              <td className="main__table-body-cell"></td>
+              <td className="main__table-body-cell"></td>
             </tr>
           </tbody>
         </table>

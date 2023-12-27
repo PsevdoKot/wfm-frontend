@@ -9,6 +9,18 @@ import { clearUserData, setUserData } from './user-process/user-process';
 import { UserData } from '../types/user-data';
 import { RegistrationData } from '../types/registration-data';
 import { AuthData } from '../types/auth-data';
+import { Role } from '../types/role';
+
+export const changeUserDataAction = createAsyncThunk<void, { role: Role }, {
+  dispatch: AppDispatch;
+  state: State;
+  extra: AxiosInstance;
+}>(
+  'user/checkAuth',
+  async ({ role }, { extra: api }) => {
+    await api.post(APIRoute.User, { role });
+  },
+);
 
 export const checkAuthAction = createAsyncThunk<UserData, undefined, {
   dispatch: AppDispatch;

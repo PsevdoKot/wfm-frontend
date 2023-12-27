@@ -11,6 +11,9 @@ export const AppRoutes = {
   Calculator: {
     FullPath: '/calculator'
   },
+  Staff: {
+    FullPath: '/staff',
+  },
   Login: {
     FullPath: '/login',
   },

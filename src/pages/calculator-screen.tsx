@@ -6,12 +6,12 @@ import SettingsSVG from '../components/svg/settings-svg';
 export default function CalculatorScreen(): JSX.Element {
   return (
     <Layout>
-      <article className="management">
-        <div className="management__title">
+      <article className="calculator main">
+        <div className="main__title">
           <CalculatorSVG stroke='black' />
-          <h1 className="management__title-text title-reset">Калькулятор метрик</h1>
+          <h1 className="main__title-text title-reset">Калькулятор метрик</h1>
         </div>
-        <div className="management__table-controls table-controls">
+        <div className="main__table-controls table-controls">
           <div className="table-controls__date">
             <button className="table-controls__date-left-btn btn-reset">&lt;</button>
             <button className="table-controls__calendar-btn btn-reset">

@@ -7,8 +7,8 @@ import checkNameValidity from '../shared/check-first-name-validity';
 import checkLoginValidity from '../shared/check-login-validity';
 import checkPasswordValidity from '../shared/check-password-validity';
 import FormInput from '../components/form-input';
-import FormSelect from '../components/form-select';
 import { RolesRU } from '../consts';
+import FormSelect from '../components/form-select';
 
 export default function SignUpScreen(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -48,7 +48,6 @@ export default function SignUpScreen(): JSX.Element {
         firstName: firstName,
         lastName: lastName,
         patronymic: patronymic,
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         role: RolesRU[role],
         login: login,
         password: password,
@@ -64,9 +63,7 @@ export default function SignUpScreen(): JSX.Element {
           <FormInput value={firstName} setValue={setFirstName} placeholder='Имя' id='first-name' />
           <FormInput value={lastName} setValue={setLastName} placeholder='Фамилия' id='last-name' />
           <FormInput value={patronymic} setValue={setPatronymic} placeholder='Отчество' id='patronymic' />
-          <FormSelect values={Object.keys(RolesRU)} selectedValue={role}
-            setSelectedValue={setRole} placeholder='Роль' id='role'
-          />
+          <FormSelect values={Object.keys(RolesRU)} selectedValue={role} setSelectedValue={setRole} placeholder='Роль' id='role' />
           <FormInput value={login} setValue={setLogin} placeholder='Логин' id='login' />
           <FormInput value={password} setValue={setPassword} placeholder='Пароль' id='password' />
 

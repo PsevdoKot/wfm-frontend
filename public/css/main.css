@@ -1,7 +1,8 @@
 :root {
   --bg-color: #fff;
-  --main-color: #fff;
-  --main-text-color: #fff;
+  --main-color: #EF3B24;
+  --dark-text-color: #000;
+  --light-text-color: #fff;
   --sidebar-width: 64px;
 }
 
@@ -97,7 +98,7 @@ img {
   padding: 12px;
   height: 100%;
   width: var(--sidebar-width);
-  background-color: #EF3B24;
+  background-color: var(--main-color);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -110,7 +111,7 @@ img {
   gap: 4px;
   width: 40px;
   height: 40px;
-  border: solid 2px #fff;
+  border: solid 2px var(--light-text-color);
   border-radius: 5px;
   margin-bottom: 23px;
 }
@@ -118,7 +119,7 @@ img {
 .nav__burger-line {
   width: 24px;
   height: 4px;
-  background-color: #fff;
+  background-color: var(--light-text-color);
 }
 
 .nav__list {
@@ -139,7 +140,7 @@ img {
   flex-direction: column;
   padding: 24px 12px 12px 0;
   height: 100%;
-  background-color: #EF3B24;
+  background-color: var(--main-color);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -175,7 +176,7 @@ img {
   font-size: 24px;
   font-weight: 400;
   letter-spacing: 0em;
-  color: #fff;
+  color: var(--light-text-color);
 }
 
 /* header */
@@ -184,7 +185,7 @@ img {
   flex-direction: row;
   justify-content: space-between;
   padding: 18px 20px;
-  background-color: #EF3B24;
+  background-color: var(--main-color);
   border-radius: 8px;
 }
 
@@ -245,25 +246,6 @@ img {
   border-radius: 8px;
 }
 
-.signup__select {
-  appearance: none;
-  -webkit-appearance: none;
-  position: relative;
-  width: 100%;
-  padding: 15px 20px;
-  border: 0.5px solid #00000088;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.signup__select::before {
-  position: absolute;
-  content: "<";
-  right: 10px;
-  pointer-events: none;
-  user-select: none;
-}
-
 .signup__button,
 .signup__button--reverse {
   padding: 20px 52px;
@@ -276,13 +258,13 @@ img {
 }
 
 .signup__button {
-  color: #fff;
+  color: var(--light-text-color);
   background-color: #000;
 }
 
 .signup__button--reverse {
-  color: #000;
-  border: 5px solid #000000
+  color: var(--dark-text-color);
+  border: 5px solid #000
 }
 
 /* user */
@@ -308,20 +290,19 @@ img {
   border-radius: 40px;
 }
 
-.user__position-field {
+.user__role-field {
   font-size: 24px;
   font-weight: 300;
   letter-spacing: 0em;
   width: 100%;
-  padding: 15px 20px;
-  border: 1.5px solid #000000;
+  border: 1px solid #000;
   border-radius: 8px;
 }
 
 .user__data {
+  margin-top: 27px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 18px;
 }
 
@@ -331,7 +312,7 @@ img {
   letter-spacing: 0em;
   width: 432px;
   padding: 15px 20px;
-  border: 1.5px solid #000000;
+  border: 1.5px solid #000;
   border-radius: 8px;
 }
 
@@ -342,32 +323,45 @@ img {
   right: 50px;
 }
 
+.user__save-btn {
+  padding: 15px 11px;
+  margin-right: 46px;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  color: var(--dark-text-color);
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: 7px;
+}
+
 .user__signout-btn {
   padding: 15px 30px;
   font-family: Inter;
   font-size: 32px;
   font-weight: 400;
   letter-spacing: 0em;
-  color: #fff;
+  color: var(--light-text-color);
   background-color: #000;
   border-radius: 7px;
 }
 
-/* management */
-.management {
+/* main */
+.main {
   display: flex;
   flex-direction: column;
   padding: 10px 25px;
 }
 
-.management__title {
+.main__title {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 7px;
 }
 
-.management__title-text {
+.main__title-text {
   display: inline-block;
   margin-left: 5px;
   font-size: 24px;
@@ -428,7 +422,7 @@ img {
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 0em;
-  color: #000;
+  color: var(--dark-text-color);
   border: solid 1px #000;
   border-radius: 4px;
 }
@@ -437,33 +431,108 @@ img {
   width: 140px;
 }
 
-.management__table {
+.main__table {
   width: 100%;
-  ;
   border: 1px solid #000;
   border-collapse: collapse;
 }
 
-.management__table-head .management__table-row {
+.main__table-head .main__table-row {
   height: 40px;
 }
 
-.management__table-head-cell,
-.management__table-body-cell {
+.main__table-head-cell,
+.main__table-body-cell {
   text-align: center;
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0em;
-  color: #000;
+  color: var(--dark-text-color);
   border: 1px solid #000;
 }
 
-.management__table-head-cell--first,
-.management__table-body-cell--first {
+.main__table-head-cell--first,
+.main__table-body-cell--first {
   width: 180px;
 }
 
-.management__table-row {
+.main__table-row {
   height: 130px;
+}
+
+
+/* select */
+.select {
+  width: 100%;
+  border: 0.5px solid #00000088;
+  border-radius: 8px;
+}
+
+.select__container {
+  padding-left: 0.625vw;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.select__placeholder {
+  color: #00000080;
+  padding: 15px 20px;
+}
+
+.select__icon {
+  padding-right: 20px;
+}
+
+.select__dropdown {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.2s ease-out, height 0.2s ease-out;
+}
+
+.select__option {
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.select--active {
+  border: 2px solid #000;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.select--active .select__dropdown {
+  display: inline-block;
+  opacity: 1;
+}
+
+.select--active .select__icon {
+  transform: rotateX(180deg);
+}
+
+.select__option:hover {
+  background-color: #E0E0D6;
+}
+
+.select__option:active,
+.select__option--selected {
+  background-color: var(--main-color);
+}
+
+.select--selected .select__placeholder {
+  color: var(--dark-text-color);
 }

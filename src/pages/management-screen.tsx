@@ -6,12 +6,12 @@ import ManagementSVG from '../components/svg/management-svg';
 export default function ManagementScreen(): JSX.Element {
   return (
     <Layout>
-      <article className="management">
-        <div className="management__title">
+      <article className="managment main">
+        <div className="main__title">
           <ManagementSVG stroke='black' />
-          <h1 className="management__title-text title-reset">Система управления персоналом</h1>
+          <h1 className="main__title-text title-reset">Система управления персоналом</h1>
         </div>
-        <div className="management__table-controls table-controls">
+        <div className="main__table-controls table-controls">
           <div className="table-controls__date">
             <button className="table-controls__date-left-btn btn-reset">&lt;</button>
             <button className="table-controls__calendar-btn btn-reset">
@@ -31,17 +31,17 @@ export default function ManagementScreen(): JSX.Element {
             </button>
           </div>
         </div>
-        <table className="management__table">
-          <thead className="management__table-head">
-            <tr className="management__table-row">
-              <th className="management__table-head-cell management__table-head-cell--first"></th>
-              <th className="management__table-head-cell">ПН</th>
-              <th className="management__table-head-cell">ВТ</th>
-              <th className="management__table-head-cell">СР</th>
-              <th className="management__table-head-cell">ЧТ</th>
-              <th className="management__table-head-cell">ПТ</th>
-              <th className="management__table-head-cell">СБ</th>
-              <th className="management__table-head-cell">ВС</th>
+        <table className="main__table">
+          <thead className="main__table-head">
+            <tr className="main__table-row">
+              <th className="main__table-head-cell main__table-head-cell--first"></th>
+              <th className="main__table-head-cell">ПН</th>
+              <th className="main__table-head-cell">ВТ</th>
+              <th className="main__table-head-cell">СР</th>
+              <th className="main__table-head-cell">ЧТ</th>
+              <th className="main__table-head-cell">ПТ</th>
+              <th className="main__table-head-cell">СБ</th>
+              <th className="main__table-head-cell">ВС</th>
             </tr>
           </thead>
           <tbody className="management__table-body">

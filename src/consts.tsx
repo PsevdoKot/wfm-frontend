@@ -5,6 +5,7 @@ import UserSVG from './components/svg/user-svg';
 import ManagementSVG from './components/svg/management-svg';
 import { NavLink } from './types/nav-link';
 import { Role } from './types/role';
+import StaffSVG from './components/svg/staff-svg';
 
 export const AuthStatus = {
   Auth: 'Auth',
@@ -13,9 +14,9 @@ export const AuthStatus = {
 } as const;
 
 export const Roles = {
-  Employee: 'Employee',
-  Manager: 'Manager',
-  Leader: 'Leader',
+  Employee: 'Сотрудник',
+  Manager: 'Менеджер',
+  Leader: 'Руководитель',
 } as const;
 
 export const RolesRU: { [key: string]: Role } = {
@@ -45,9 +46,15 @@ export const NavLinksData: ReadonlyArray<NavLink> = [
     Title: 'Калькулятор метрик',
     Href: AppRoutes.Calculator.FullPath,
   },
+  {
+    Icon: <StaffSVG />,
+    Title: 'Сотрудники',
+    Href: AppRoutes.Staff.FullPath,
+  },
 ];
 
 export const APIRoute = {
+  User: 'user',
   Signup: 'signup',
   Login: 'login',
   Logout: 'logout',

@@ -1,4 +1,4 @@
-import { Roles } from './role';
+import { Role } from './role';
 
 export type RegistrationData = {
   firstName: string;

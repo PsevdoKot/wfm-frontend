@@ -3,11 +3,14 @@ import { AuthStatus as Status, NameSpace } from '../../consts';
 import { AuthStatus } from '../../types/auth-status';
 import { checkAuthAction, loginAction, logoutAction } from '../api-actions';
 import { UserData } from '../../types/user-data';
+import { Role } from '../../types/role';
 
-type UserProcessState = {
+export type UserProcessState = {
   authStatus: AuthStatus;
   firstName: string | undefined;
   lastName: string | undefined;
+  patronymic: string | undefined;
+  role: Role | undefined;
   avatarUrl: string | undefined;
 };
 
@@ -15,6 +18,8 @@ const initialState: UserProcessState = {
   authStatus: 'Unknown',
   firstName: undefined,
   lastName: undefined,
+  patronymic: undefined,
+  role: undefined,
   avatarUrl: undefined,
 };
 
@@ -25,11 +30,15 @@ export const userProcess = createSlice({
     setUserData: (state, action: PayloadAction<Omit<UserData, 'token'>>) => {
       state.firstName = action.payload.firstName;
       state.lastName = action.payload.lastName;
+      state.patronymic = action.payload.patronymic;
+      state.role = action.payload.role;
       state.avatarUrl = action.payload.avatarUrl;
     },
     clearUserData: (state) => {
       state.firstName = undefined;
       state.lastName = undefined;
+      state.patronymic = undefined;
+      state.role = undefined;
       state.avatarUrl = undefined;
     },
   },
@@ -53,4 +62,4 @@ export const userProcess = createSlice({
   }
 });
 
-export const {setUserData, clearUserData} = userProcess.actions;
+export const { setUserData, clearUserData } = userProcess.actions;

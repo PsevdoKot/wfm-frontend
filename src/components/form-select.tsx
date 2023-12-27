@@ -1,3 +1,5 @@
+import Select from './select';
+
 export type FormSelectProps = {
   values: string[];
   selectedValue?: string;
@@ -10,18 +12,13 @@ export default function FormSelect({ values, selectedValue, setSelectedValue, pl
   return (
     <div className="signup__input-group">
       <label className="signup__label" htmlFor={id}>{placeholder}</label>
-      <select
-        value={selectedValue}
-        onChange={(e) => setSelectedValue(e.target.value)}
-        className="signup__select"
+      <Select
+        values={values}
+        selectedValue={selectedValue}
+        setSelectedValue={setSelectedValue}
         placeholder={placeholder}
-        name={id}
         id={id}
-      >
-        {values.map((value) => (
-          <option key={value} value={value}>{value}</option>
-        ))}
-      </select>
+      />
     </div>
   );
 }

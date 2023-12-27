@@ -7,7 +7,7 @@ import { AppRoutes } from '../app-routes';
 
 export type PrivateRouteProps = PropsWithChildren;
 
-export default function PrivateRoute({ children }: PrivateRouteProps): JSX.Element {
+export default function PrivateComponent({ children }: PrivateRouteProps): JSX.Element {
   const authStatus = useAppSelector(getAuthStatus);
 
   return (

@@ -1,6 +1,6 @@
 export const AppRoutes = {
   User: {
-    FullPath: '/user/:id',
+    FullPath: '/user',
   },
   Management: {
     FullPath: '/managment',
@@ -13,6 +13,10 @@ export const AppRoutes = {
   },
   Staff: {
     FullPath: '/staff',
+  },
+  StaffMember: {
+    FullPath: '/staff/:id',
+    RelativePath: '/:id',
   },
   Login: {
     FullPath: '/login',

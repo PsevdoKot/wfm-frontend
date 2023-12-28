@@ -55,14 +55,16 @@ export const NavLinksData: ReadonlyArray<NavLink> = [
 
 export const APIRoute = {
   User: 'user',
+  Staff: 'staff',
   Signup: 'signup',
   Login: 'login',
   Logout: 'logout',
 } as const;
 
 export const NameSpace = {
-  Error: 'Error',
   User: 'User',
+  Staff: 'Staff',
+  Error: 'Error',
 } as const;
 
 export const ErrorCodesDesc: { [key: number]: string } = {

@@ -1,24 +1,22 @@
-import { useState } from 'react';
 import Layout from '../components/layout';
-import UserPictureSVG from '../components/svg/user-picture-svg';
+import AddAvatarSVG from '../components/svg/add-avatar-svg';
+import UserAvatarSVG from '../components/svg/user-avatar-svg';
 import { useAppDispatch, useAppSelector } from '../hooks';
-import { changeUserDataAction, logoutAction } from '../store/api-actions';
+import { logoutAction } from '../store/api-actions';
 import { getUserData } from '../store/user-process/selectors';
-import { Roles, RolesRU } from '../consts';
-import Select from '../components/select';
-import { Role } from '../types/role';
 
-export default function UserScreen(): JSX.Element { // загрузку фото сделаю позже
+export default function UserScreen(): JSX.Element { // лк сотрудника; загрузку фото сделаю позже
   const dispatch = useAppDispatch();
 
   const userData = useAppSelector(getUserData);
 
-  const [newRole, setNewRole] = useState<string | undefined>(userData.role && Roles[userData.role]);
-  const hanldeSaveChangeButtonClick = () => {
-    dispatch(changeUserDataAction({
-      role: RolesRU[newRole as Role],
-    }));
-  };
+  // if (!userData) {
+  //   return <LoadingScreen />;
+  // }
+
+  // const hanldeSaveButtonClick = () => {
+  //   dispatch(logoutAction());
+  // };
 
   const hanldeLogoutButtonClick = () => {
     dispatch(logoutAction());
@@ -29,30 +27,25 @@ export default function UserScreen(): JSX.Element { // загрузку фото
       <article className="user">
         <div className="user__info">
           <div className='user-left-info'>
-            <button className="user__image btn-reset">
+            <button className="user__avatar btn-reset">
               {userData.avatarUrl
-                ? <img src={userData.avatarUrl} alt='Аватарка пользователся' />
-                : <UserPictureSVG />}
+                ? <img src={userData.avatarUrl} className="user__avatar-img" alt='Аватарка пользователся' />
+                : <UserAvatarSVG />}
+              <AddAvatarSVG />
             </button>
-            <div className="user__role-field">
-              <Select
-                values={Object.keys(RolesRU)}
-                selectedValue={newRole}
-                setSelectedValue={setNewRole}
-                placeholder="Должность"
-                id='new-role'
-              />
+            <div className="user__role">
+              {userData.role ?? 'Должность'}
             </div>
           </div>
           <div className="user__data">
-            <div className="user__fio-field">{userData.firstName ?? 'Имя'}</div>
-            <div className="user__fio-field">{userData.lastName ?? 'Фамилия'}</div>
-            <div className="user__fio-field">{userData.patronymic ?? 'Отчество'}</div>
+            <div className="user__fio">{userData.firstName ?? 'Имя'}</div>
+            <div className="user__fio">{userData.lastName ?? 'Фамилия'}</div>
+            <div className="user__fio">{userData.patronymic ?? 'Отчество'}</div>
           </div>
         </div>
         <div className='user__btns'>
-          {newRole &&
-            <button onClick={hanldeSaveChangeButtonClick} className="user__save-btn btn-reset">Сохранить</button>}
+          {/* {newRole &&
+            <button onClick={hanldeSaveButtonClick} className="user__save-btn btn-reset">Сохранить</button>} */}
           <button onClick={hanldeLogoutButtonClick} className="user__signout-btn btn-reset">Выйти</button>
         </div>
       </article>

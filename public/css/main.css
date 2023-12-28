@@ -285,16 +285,30 @@ img {
   margin-right: 50px;
 }
 
-.user__image {
+.user__avatar {
+  position: relative;
   margin-bottom: 24px;
   border-radius: 40px;
 }
 
-.user__role-field {
+.user__avatar-img {
+  width: 270px;
+  height: 270px;
+  border-radius: 40px;
+}
+
+.add-avatar-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.user__role {
   font-size: 24px;
   font-weight: 300;
   letter-spacing: 0em;
   width: 100%;
+  padding: 15px 20px;
   border: 1px solid #000;
   border-radius: 8px;
 }
@@ -306,7 +320,7 @@ img {
   gap: 18px;
 }
 
-.user__fio-field {
+.user__fio {
   font-size: 24px;
   font-weight: 300;
   letter-spacing: 0em;
@@ -318,14 +332,16 @@ img {
 
 .user__btns {
   display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 36px;
   position: fixed;
   bottom: 50px;
   right: 50px;
 }
 
 .user__save-btn {
-  padding: 15px 11px;
-  margin-right: 46px;
+  padding: 10px 11px;
   font-family: Inter;
   font-size: 32px;
   font-weight: 400;
@@ -337,7 +353,7 @@ img {
 }
 
 .user__signout-btn {
-  padding: 15px 30px;
+  padding: 10px 30px;
   font-family: Inter;
   font-size: 32px;
   font-weight: 400;
@@ -462,6 +478,73 @@ img {
 }
 
 
+/* staff */
+.staff .main__title {
+  margin-bottom: 36px;
+}
+
+.staff__list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.staff__member {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.staff__member-avatar {
+  width: 118px;
+  height: 118px;
+  margin-right: 18px;
+}
+
+.staff__member-avatar-img {
+  border-radius: 40px;
+}
+
+.staff__member-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  margin-right: 50px;
+}
+
+.staff__member-fio,
+.staff__member-role {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 0em;
+  color: var(--dark-text-color);
+}
+
+.staff__member-edit-btn {
+  padding: 17px 5px;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  color: #000;
+  border: 3px solid #000;
+  border-radius: 7px;
+}
+
+
+/* staff-member */
+.user__role-field {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 0em;
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+
+
 /* select */
 .select {
   width: 100%;
@@ -535,4 +618,19 @@ img {
 
 .select--selected .select__placeholder {
   color: var(--dark-text-color);
+}
+
+
+/* loading */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading__title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0em;
 }

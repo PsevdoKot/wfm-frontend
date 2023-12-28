@@ -3,19 +3,14 @@ import { AuthStatus as Status, NameSpace } from '../../consts';
 import { AuthStatus } from '../../types/auth-status';
 import { checkAuthAction, loginAction, logoutAction } from '../api-actions';
 import { UserData } from '../../types/user-data';
-import { Role } from '../../types/role';
 
-export type UserProcessState = {
+export type UserProcessState = Partial<UserData> & {
   authStatus: AuthStatus;
-  firstName: string | undefined;
-  lastName: string | undefined;
-  patronymic: string | undefined;
-  role: Role | undefined;
-  avatarUrl: string | undefined;
 };
 
 const initialState: UserProcessState = {
   authStatus: 'Unknown',
+  id: undefined,
   firstName: undefined,
   lastName: undefined,
   patronymic: undefined,
@@ -27,7 +22,8 @@ export const userProcess = createSlice({
   name: NameSpace.User,
   initialState,
   reducers: {
-    setUserData: (state, action: PayloadAction<Omit<UserData, 'token'>>) => {
+    setUserData: (state, action: PayloadAction<UserData>) => {
+      state.id = action.payload.id;
       state.firstName = action.payload.firstName;
       state.lastName = action.payload.lastName;
       state.patronymic = action.payload.patronymic;
@@ -35,6 +31,7 @@ export const userProcess = createSlice({
       state.avatarUrl = action.payload.avatarUrl;
     },
     clearUserData: (state) => {
+      state.id = undefined;
       state.firstName = undefined;
       state.lastName = undefined;
       state.patronymic = undefined;

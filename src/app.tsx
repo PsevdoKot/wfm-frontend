@@ -11,6 +11,7 @@ import UserScreen from './pages/user-screen';
 import PlanningScreen from './pages/planning-screen';
 import CalculatorScreen from './pages/calculator-screen';
 import StaffScreen from './pages/staff-screen';
+import StaffMemberScreen from './pages/staff-member-screen';
 
 export default function App(): JSX.Element {
   return (
@@ -21,7 +22,10 @@ export default function App(): JSX.Element {
           <Route path={AppRoutes.Planning.FullPath} element={<PlanningScreen />} />
           <Route path={AppRoutes.Management.FullPath} element={<ManagementScreen />} />
           <Route path={AppRoutes.Calculator.FullPath} element={<CalculatorScreen />} />
-          <Route path={AppRoutes.Staff.FullPath} element={<StaffScreen />} />
+          <Route path={AppRoutes.Staff.FullPath}>
+            <Route index element={<StaffScreen />} />
+            <Route path={AppRoutes.StaffMember.FullPath} element={<StaffMemberScreen />} />
+          </Route>
           <Route path={AppRoutes.Login.FullPath} element={<LoginScreen />} />
           <Route path={AppRoutes.SignUp.FullPath} element={<SignUpScreen />} />
           <Route path={AppRoutes.Error.FullPath} element={<ErrorScreen errorStatusCode={404} />} />

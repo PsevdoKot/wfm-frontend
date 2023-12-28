@@ -1,6 +1,6 @@
 import './error-screen.css';
 import { Link } from 'react-router-dom';
-import { AppRoutes } from "../../app-routes";
+import { AppRoutes } from '../../app-routes';
 import { ErrorCodesDesc } from '../../consts';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getErrorCode } from '../../store/error-process/selectors';
@@ -35,7 +35,7 @@ export default function ErrorScreen({ errorStatusCode = -1 }: ErrorScreenProps):
           {errorTitle}
           <small>{errorDesc}</small>
         </h1>
-        <Link to={AppRoutes.Management.fullPath} className="error-screen__link">Go back to the main page</Link>
+        <Link to={AppRoutes.Planning.FullPath} className="error-screen__link">Go back to the main page</Link>
       </div>
     </div>
   );

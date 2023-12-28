@@ -26,7 +26,7 @@ export default function UserScreen(): JSX.Element { // лк сотрудника
     <Layout>
       <article className="user">
         <div className="user__info">
-          <div className='user-left-info'>
+          <div className='user__left-info'>
             <button className="user__avatar btn-reset">
               {userData.avatarUrl
                 ? <img src={userData.avatarUrl} className="user__avatar-img" alt='Аватарка пользователся' />

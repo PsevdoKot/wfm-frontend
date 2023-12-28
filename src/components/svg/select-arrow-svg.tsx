@@ -1,8 +1,8 @@
-type SelectArrowProps = {
+export type SelectArrowSVGProps = {
   fill: string;
 };
 
-export default function SelectArrow({ fill }: SelectArrowProps): JSX.Element {
+export default function SelectArrowSVG({ fill }: SelectArrowSVGProps): JSX.Element {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path

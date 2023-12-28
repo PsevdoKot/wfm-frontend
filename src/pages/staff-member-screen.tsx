@@ -64,12 +64,12 @@ export default function StaffMemberScreen(): JSX.Element {
           ?
           <>
             <div className="user__info">
-              <div className='user-left-info'>
+              <div className='user__left-info'>
                 <button className="user__avatar btn-reset">
                   {avatarComponent}
                   <AddAvatarSVG />
                 </button>
-                <div className="user__role-field">
+                <div className="staff-member__role-field">
                   <Select
                     values={Object.keys(RolesRU)}
                     selectedValue={newRole}
@@ -93,7 +93,7 @@ export default function StaffMemberScreen(): JSX.Element {
           :
           <>
             <div className="user__info">
-              <div className='user-left-info'>
+              <div className='user__left-info'>
                 <div className="user__avatar" >{avatarComponent}</div>
                 <div className="user__role">{Roles[staffMemberData.role]}</div>
               </div>

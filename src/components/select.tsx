@@ -1,6 +1,6 @@
 import cs from 'classnames';
 import { useState } from 'react';
-import SelectArrow from './svg/select-arrow';
+import SelectArrowSVG from './svg/select-arrow-svg';
 
 export type SelectProps = {
   values: string[];
@@ -18,7 +18,7 @@ export default function Select({ values, selectedValue, setSelectedValue, placeh
       <div onClick={() => setDropdownOpen((prev) => !prev)} className="select__container">
         <div className="select__placeholder">{selectedValue ?? placeholder}</div>
         <div className="select__icon">
-          <SelectArrow fill='black' />
+          <SelectArrowSVG fill='black' />
         </div>
         <div className="select__dropdown">
           {values.map((value) => (

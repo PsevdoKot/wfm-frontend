@@ -13,6 +13,8 @@ import { Role } from '../types/role';
 import { ServerUserData } from '../types/server-user-data';
 import { staffMock } from '../mocks/staff';
 import findStaffMemeberById from '../shared/find-staff-member-by-id';
+import { CalculatorResult } from '../types/calculator-result';
+import { CalculatorInputs } from '../types/calculator-inputs';
 
 export const fetchStaffDataAction = createAsyncThunk<UserData[], undefined, {
   dispatch: AppDispatch;
@@ -60,8 +62,20 @@ export const deleteUserDataAction = createAsyncThunk<void, { id: string }, {
 }>(
   'staff/deleteUser',
   async ({ id }, { dispatch, extra: api }) => {
-    dispatch(redirectToRoute(AppRoutes.Staff.FullPath)); // перенести ниже, когда будет взаимодействие со сервером
     await api.delete(`${APIRoute.User}/${id}`);
+    dispatch(redirectToRoute(AppRoutes.Staff.FullPath));
+  },
+);
+
+export const postCalculatorInputsAction = createAsyncThunk<CalculatorResult, CalculatorInputs, {
+  dispatch: AppDispatch;
+  state: State;
+  extra: AxiosInstance;
+}>(
+  'calculator/deleteUser',
+  async (inputs, { extra: api }) => {
+    const { data } = await api.post<CalculatorResult>(APIRoute.Calculator, inputs);
+    return data;
   },
 );
 

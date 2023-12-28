@@ -33,6 +33,12 @@ img {
   max-width: 100%;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* glob */
 .visually-hidden {
   position: absolute;
@@ -279,7 +285,7 @@ img {
   flex-direction: row;
 }
 
-.user-left-info {
+.user__left-info {
   display: flex;
   flex-direction: column;
   margin-right: 50px;
@@ -535,13 +541,200 @@ img {
 
 
 /* staff-member */
-.user__role-field {
+.staff-member .main__title {
+  margin-bottom: 36px;
+}
+
+.staff-member__role-field {
   font-size: 24px;
   font-weight: 300;
   letter-spacing: 0em;
   width: 100%;
   border: 1px solid #000;
   border-radius: 8px;
+}
+
+
+/* calculator */
+.calculator .main__title {
+  margin-bottom: 36px;
+}
+
+.calculator__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 66px;
+}
+
+.calculator__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.calculator__input-wrapper {
+  padding: 0 19px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 21px;
+  width: 100%;
+  border: 4px solid #000;
+  border-radius: 20px;
+}
+
+.calculator__input-label {
+  text-align: center;
+  font-family: Inter;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  color: var(--dark-text-color);
+}
+
+.calculator__input {
+  padding: 10px 10px;
+  width: 100%;
+  text-align: center;
+  font-family: Inter;
+  font-size: 27px;
+  font-weight: 300;
+  letter-spacing: 0em;
+  color: var(--dark-text-color);
+  border: 4px solid #000;
+  border-radius: 20px;
+}
+
+.calculator__worker-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.calculator__worker-input {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  width: 100%;
+  border: 4px solid #000;
+  border-radius: 20px;
+}
+
+.worker-input__role,
+.worker-input__count,
+.worker-input__min-count,
+.worker-input__salary {
+  padding: 2px 0;
+  text-align: center;
+  font-family: Inter;
+  font-size: 27px;
+  font-weight: 300;
+  letter-spacing: 0em;
+  color: var(--dark-text-color);
+  border: none;
+  outline: none;
+}
+
+.worker-input__role,
+.worker-input__count,
+.worker-input__min-count {
+  border-bottom: 0.5px solid #000;
+}
+
+.calculator__worker-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator__worker-remove-btn,
+.calculator__worker-add-btn {
+  padding: 8px 12px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  color: var(--light-text-color);
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.calculator__middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.calculator__submit-btn {
+  padding: 8px 12px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  color: var(--light-text-color);
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.calculator__result-wrapper {
+  padding: 10px 30px 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 60%;
+  border: 5px solid #000;
+  border-radius: 30px;
+}
+
+.calculator__result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.calculator__result-title {
+  margin-bottom: 32px;
+  font-family: Inter;
+  font-size: 33px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  color: var(--dark-text-color);
+}
+
+.calculator__result-text {
+  padding: 40px 50px;
+  width: 100%;
+  min-height: 125px;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: 0em;
+  color: var(--dark-text-color);
+  border: 5px solid #000;
+  border-radius: 30px;
+}
+
+
+/* loading */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading__title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0em;
 }
 
 
@@ -618,19 +811,4 @@ img {
 
 .select--selected .select__placeholder {
   color: var(--dark-text-color);
-}
-
-
-/* loading */
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loading__title {
-  text-align: center;
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: 0em;
 }

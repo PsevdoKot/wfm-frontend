@@ -1,3 +1,4 @@
+import Calendar from '../components/calendar';
 import Layout from '../components/layout';
 import CalendarSVG from '../components/svg/calendar-svg';
 import PlanningSVG from '../components/svg/planning-svg';
@@ -31,29 +32,7 @@ export default function PlanningScreen(): JSX.Element {
             </button>
           </div>
         </div>
-        <table className="main__table">
-          <thead className="main__table-head">
-            <tr className="main__table-row">
-              <th className="main__table-head-cell">ПН</th>
-              <th className="main__table-head-cell">ВТ</th>
-              <th className="main__table-head-cell">СР</th>
-              <th className="main__table-head-cell">ЧТ</th>
-              <th className="main__table-head-cell">ПТ</th>
-              <th className="main__table-head-cell">СБ</th>
-              <th className="main__table-head-cell">ВС</th>
-            </tr>
-          </thead>
-          <tbody className="main__table-body">
-            <tr className="main__table-row">
-              <td className="main__table-body-cell"></td>
-              <td className="main__table-body-cell"></td>
-              <td className="main__table-body-cell"></td>
-              <td className="main__table-body-cell"></td>
-              <td className="main__table-body-cell"></td>
-              <td className="main__table-body-cell"></td>
-            </tr>
-          </tbody>
-        </table>
+        <Calendar currentDate={new Date()} />
       </article>
     </Layout>
   );

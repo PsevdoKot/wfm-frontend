@@ -62,8 +62,8 @@ export const deleteUserDataAction = createAsyncThunk<void, { id: string }, {
 }>(
   'staff/deleteUser',
   async ({ id }, { dispatch, extra: api }) => {
-    await api.delete(`${APIRoute.User}/${id}`);
     dispatch(redirectToRoute(AppRoutes.Staff.FullPath));
+    await api.delete(`${APIRoute.User}/${id}`);
   },
 );
 

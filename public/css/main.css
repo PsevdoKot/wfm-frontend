@@ -480,7 +480,7 @@ input::-webkit-inner-spin-button {
 }
 
 .main__table-row {
-  height: 130px;
+  height: 100px;
 }
 
 
@@ -722,6 +722,59 @@ input::-webkit-inner-spin-button {
   border-radius: 30px;
 }
 
+
+/* calendar */
+.calendar {
+  width: 100%;
+}
+
+.calendar__month {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.calendar__btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* .calendar__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar__table-head-cell {
+  text-align: 'center';
+  padding: '10px 0';
+  border: 1px solid #000;
+} */
+
+.calculator__table-body-cell {
+  background-color: #efefef;
+}
+
+.calculator__table-body-cell--active {
+  background-color: var(--main-color);
+}
+
+.calendar__date-btn {
+  width: 100%;
+  height: 100px;
+}
+
+.calendar__date-btn:hover {
+  background-color: beige;
+}
+
+.calendar__date-btn:active {
+  background-color: var(--main-color);
+}
+
+.calendar__selected-date {
+  padding: 10px;
+}
 
 /* loading */
 .loading {

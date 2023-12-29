@@ -72,14 +72,14 @@ export default function CalculatorScreen(): JSX.Element {
           <form onSubmit={handleSubmit} id="calculator-form" className="calculator__form" action="#">
             <div className="calculator__input-wrapper">
               <label className="calculator__input-label" htmlFor="workload">Объём работы</label>
-              <input value={workload} onChange={(e) => setWorkload(Number(e.target.value))}
+              <input value={workload} onChange={(e) => setWorkload(Number(e.target.value))} min="0"
                 className="calculator__input" type="number" name="workload" id="workload"
               />
             </div>
             <PlusSVG />
             <div className="calculator__input-wrapper">
               <label className="calculator__input-label" htmlFor="work-period">Период работы</label>
-              <input value={workPeriod} onChange={(e) => setWorkPeriod(Number(e.target.value))}
+              <input value={workPeriod} onChange={(e) => setWorkPeriod(Number(e.target.value))} min="0"
                 className="calculator__input" type="number" name="work-period" id="work-period"
               />
             </div>
@@ -94,13 +94,13 @@ export default function CalculatorScreen(): JSX.Element {
                     <input value={workerInput.role} onChange={(e) => handleWorkerInputChange(e, index)}
                       className="worker-input__role" type="text" name="role" placeholder="Должность" id="role"
                     />
-                    <input value={workerInput.count} onChange={(e) => handleWorkerInputChange(e, index)}
+                    <input value={workerInput.count} onChange={(e) => handleWorkerInputChange(e, index)} min="0"
                       className="worker-input__count" type="number" name="count" placeholder="Количество" id="count"
                     />
-                    <input value={workerInput.minCount} onChange={(e) => handleWorkerInputChange(e, index)}
+                    <input value={workerInput.minCount} onChange={(e) => handleWorkerInputChange(e, index)} min="0"
                       className="worker-input__min-count" type="number" name="minCount" placeholder="Минимальное количество" id="minCount"
                     />
-                    <input value={workerInput.salary} onChange={(e) => handleWorkerInputChange(e, index)}
+                    <input value={workerInput.salary} onChange={(e) => handleWorkerInputChange(e, index)} min="0"
                       className="worker-input__salary" type="number" name="salary" placeholder="Зарплата" id="salary"
                     />
                   </div>
